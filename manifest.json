@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "DSA Hint Assistant",
+  "version": "1.0",
+  "description": "AI-powered hints for LeetCode & CP problems",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://leetcode.com/*", 
+    "https://codeforces.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": { "48": "icons/icon48.png" }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/problems/*",
+        "https://codeforces.com/problemset/problem/*",
+        "https://codeforces.com/contest/*/problem/*",
+        "https://codeforces.com/gym/*/problem/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "background": { 
+    "service_worker": "background.js" 
+  }
+}
