@@ -3,9 +3,9 @@
  * Handles: problem detection, hint levels, Gemini API calls,
  *          similar problems, API key storage, tab switching.
  */
-
+// Line 2-3 in popup.js — replace with:
 const GEMINI_API_URL =
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
 
 // ─── State ────────────────────────────────────────────────────────────────────
 let currentProblem = null;
@@ -117,28 +117,40 @@ async function loadKeyStatus() {
 }
 
 // ─── Core: Gemini fetch ───────────────────────────────────────────────────────
-async function callGemini(prompt) {
+async function callGemini(prompt, retries = 2) {
   const apiKey = await getStoredKey();
   if (!apiKey) {
     return "⚠️ No API key found. Go to the **Settings** tab and add your Gemini API key.";
   }
 
-  const res = await fetch(`${GEMINI_API_URL}?key=${apiKey}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: { temperature: 0.4, maxOutputTokens: 1024 }
-    })
-  });
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    const res = await fetch(`${GEMINI_API_URL}?key=${apiKey}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: { temperature: 0.4, maxOutputTokens: 1024 }
+      })
+    });
 
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    return `⚠️ API error ${res.status}: ${err?.error?.message || "Unknown error"}`;
+    if (res.status === 429) {
+      if (attempt < retries) {
+        const wait = 5000 * (attempt + 1); // 5s, then 10s
+        showLoader(`Rate limited — retrying in ${wait / 1000}s…`);
+        await new Promise(r => setTimeout(r, wait));
+        continue;
+      }
+      return "⚠️ Quota exceeded. Wait a minute and try again, or check your Gemini API billing at https://ai.dev/rate-limit";
+    }
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      return `⚠️ API error ${res.status}: ${err?.error?.message || "Unknown error"}`;
+    }
+
+    const data = await res.json();
+    return data.candidates?.[0]?.content?.parts?.[0]?.text || "No response received.";
   }
-
-  const data = await res.json();
-  return data.candidates?.[0]?.content?.parts?.[0]?.text || "No response received.";
 }
 
 // ─── Get Hints ────────────────────────────────────────────────────────────────
@@ -215,7 +227,10 @@ async function detectProblem() {
   const url = tab?.url || "";
 
   const isLeetCode  = url.includes("leetcode.com/problems/");
-  const isCodeforces = url.includes("codeforces.com/problemset/");
+  const isCodeforces = url.includes("codeforces.com/problemset/") ||
+                     url.includes("codeforces.com/contest/") ||
+                     url.includes("codeforces.com/gym/");
+
 
   if (!isLeetCode && !isCodeforces) {
     noProblem.style.display = "flex";
