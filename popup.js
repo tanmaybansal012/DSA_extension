@@ -1,17 +1,9 @@
-/**
- * popup.js — DSA Hint Assistant
- * Handles: problem detection, hint levels, Gemini API calls,
- *          similar problems, API key storage, tab switching.
- */
-// Line 2-3 in popup.js — replace with:
 const GEMINI_API_URL =
   "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
 
-// ─── State ────────────────────────────────────────────────────────────────────
 let currentProblem = null;
 let selectedLevel = 1;
 
-// ─── DOM refs ─────────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
 const problemCard   = $("problem-card");
 const noProblem     = $("no-problem");
@@ -34,7 +26,6 @@ const apiKeyInput   = $("api-key-input");
 const saveKeyBtn    = $("save-key-btn");
 const keyStatus     = $("key-status");
 
-// ─── Utility ──────────────────────────────────────────────────────────────────
 function showLoader(msg = "Thinking…") {
   loaderText.textContent = msg;
   loader.classList.add("visible");
@@ -51,7 +42,6 @@ function hideLoader() {
 
 function showOutput(text, tag) {
   outputTag.textContent = tag;
-  // Simple markdown-lite rendering (bold, headers)
   const rendered = text
     .replace(/### (.+)/g, '<br><strong style="color:var(--accent2)">$1</strong><br>')
     .replace(/## (.+)/g,  '<br><strong style="color:var(--accent); font-size:13px">$1</strong><br>')
@@ -72,7 +62,6 @@ function getStoredKey() {
   });
 }
 
-// ─── Tab switching ────────────────────────────────────────────────────────────
 document.querySelectorAll(".tab").forEach(tab => {
   tab.addEventListener("click", () => {
     document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
@@ -82,7 +71,6 @@ document.querySelectorAll(".tab").forEach(tab => {
   });
 });
 
-// ─── Hint level selection ─────────────────────────────────────────────────────
 document.querySelectorAll(".level-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".level-btn").forEach(b => b.classList.remove("active"));
@@ -91,7 +79,6 @@ document.querySelectorAll(".level-btn").forEach(btn => {
   });
 });
 
-// ─── API Key: save & load ─────────────────────────────────────────────────────
 saveKeyBtn.addEventListener("click", () => {
   const key = apiKeyInput.value.trim();
   if (!key) { keyStatus.textContent = "Enter a key first."; return; }
@@ -116,7 +103,6 @@ async function loadKeyStatus() {
   }
 }
 
-// ─── Core: Gemini fetch ───────────────────────────────────────────────────────
 async function callGemini(prompt, retries = 2) {
   const apiKey = await getStoredKey();
   if (!apiKey) {
@@ -135,7 +121,7 @@ async function callGemini(prompt, retries = 2) {
 
     if (res.status === 429) {
       if (attempt < retries) {
-        const wait = 5000 * (attempt + 1); // 5s, then 10s
+        const wait = 5000 * (attempt + 1); 
         showLoader(`Rate limited — retrying in ${wait / 1000}s…`);
         await new Promise(r => setTimeout(r, wait));
         continue;
@@ -153,7 +139,6 @@ async function callGemini(prompt, retries = 2) {
   }
 }
 
-// ─── Get Hints ────────────────────────────────────────────────────────────────
 async function getHints() {
   if (!currentProblem) return;
   const code = userCode.value.trim();
@@ -197,7 +182,6 @@ ${selectedLevel >= 3 ? "### 🪜 Step-by-Step Skeleton\n[Pseudocode outline — 
   showOutput(result, `HINT • LEVEL ${selectedLevel}`);
 }
 
-// ─── Similar Problems ─────────────────────────────────────────────────────────
 async function getSimilarProblems() {
   if (!currentProblem) return;
 
@@ -221,7 +205,6 @@ Format clearly with ### for each problem.
   showOutput(result, "SIMILAR PROBLEMS");
 }
 
-// ─── Problem Detection ────────────────────────────────────────────────────────
 async function detectProblem() {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   const url = tab?.url || "";
@@ -241,7 +224,6 @@ async function detectProblem() {
     return;
   }
 
-  // Mark status dot as active
   statusDot.classList.add("on-leetcode");
   statusDot.title = "Active on supported page";
 
@@ -263,14 +245,12 @@ async function detectProblem() {
       noProblem.querySelector("span").textContent   = "Try refreshing the problem page.";
     }
   } catch (e) {
-    // Content script might not be injected yet
     noProblem.style.display = "flex";
     noProblem.querySelector("strong").textContent = "Content script not ready";
     noProblem.querySelector("span").textContent   = "Refresh the problem page and try again.";
   }
 }
 
-// ─── Copy to clipboard ────────────────────────────────────────────────────────
 copyBtn.addEventListener("click", () => {
   const text = outputText.innerText;
   navigator.clipboard.writeText(text).then(() => {
@@ -279,10 +259,8 @@ copyBtn.addEventListener("click", () => {
   });
 });
 
-// ─── Event listeners ──────────────────────────────────────────────────────────
 getHintBtn.addEventListener("click", getHints);
 similarBtn.addEventListener("click", getSimilarProblems);
 
-// ─── Init ─────────────────────────────────────────────────────────────────────
 detectProblem();
 loadKeyStatus();
