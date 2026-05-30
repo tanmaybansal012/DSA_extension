@@ -20,29 +20,24 @@
   </header>
 
   <main>
-    <!-- Tabs -->
     <div class="tabs">
       <div class="tab active" data-tab="hints">💡 Hints</div>
       <div class="tab" data-tab="settings">⚙️ Settings</div>
     </div>
 
-    <!-- ── HINTS TAB ── -->
     <div class="tab-panel active" id="tab-hints">
 
-      <!-- Problem detected -->
       <div id="problem-card">
         <div id="problem-title">Loading…</div>
         <div id="problem-desc"></div>
       </div>
 
-      <!-- No problem state -->
       <div id="no-problem">
         <div class="big">🔍</div>
         <strong>No problem detected</strong>
         <span>Open a LeetCode or Codeforces problem, then click the extension.</span>
       </div>
 
-      <!-- Hint level -->
       <div id="hint-controls" style="display:none">
         <div class="section-label">Hint Level</div>
         <div class="hint-levels">
@@ -61,13 +56,11 @@
         </div>
       </div>
 
-      <!-- Optional code paste -->
       <div id="code-section" style="display:none">
         <div class="section-label">Your code (optional)</div>
         <textarea id="user-code" placeholder="// Paste your current attempt here for more targeted hints…" rows="4"></textarea>
       </div>
 
-      <!-- Actions -->
       <div id="action-btns" class="btn-row" style="display:none">
         <button class="btn btn-primary" id="get-hint-btn">
           <span>💡</span> Get Hint
@@ -77,7 +70,6 @@
         </button>
       </div>
 
-      <!-- Loader -->
       <div class="loader" id="loader">
         <div class="dots">
           <span></span><span></span><span></span>
@@ -85,7 +77,6 @@
         <span id="loader-text">Thinking…</span>
       </div>
 
-      <!-- Output -->
       <div id="output-box">
         <div class="output-header">
           <span class="output-tag" id="output-tag">HINT • LEVEL 1</span>
@@ -96,7 +87,6 @@
 
     </div>
 
-    <!-- ── SETTINGS TAB ── -->
     <div class="tab-panel" id="tab-settings">
 
       <div id="api-section">
