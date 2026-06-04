@@ -11,10 +11,9 @@ function extractProblem() {
   for (const [domain, fn] of Object.entries(PLATFORMS)) {
     if (host.includes(domain)) return fn();
   }
-  return extractGeneric(); // ← works on ANY platform
+  return extractGeneric(); 
 }
 
-// ─── Generic extractor (the new core) ────────────────────────────────────────
 function extractGeneric() {
   const title = extractTitle();
   const { description, examples } = extractMainContent();
@@ -22,7 +21,6 @@ function extractGeneric() {
 }
 
 function extractTitle() {
-  // Priority: <title> tag → h1 → h2 → og:title meta
   return (
     document.querySelector('h1')?.innerText ||
     document.querySelector('h2')?.innerText ||
@@ -33,21 +31,18 @@ function extractTitle() {
 }
 
 function extractMainContent() {
-  // Step 1: prefer semantic landmarks
   const semanticEl =
     document.querySelector('main') ||
     document.querySelector('article') ||
     document.querySelector('[role="main"]') ||
     document.querySelector('section');
 
-  // Step 2: fallback — score every div by text density
   const container = semanticEl || scoreDivs();
 
   if (!container) return { description: "", examples: "" };
 
   const description = container.innerText.slice(0, 3000).trim();
 
-  // Step 3: pull out code/example blocks (pre, code, blockquote)
   const examples = [...container.querySelectorAll('pre, code, blockquote')]
     .map(el => el.innerText.trim())
     .filter(t => t.length > 0)
@@ -57,13 +52,11 @@ function extractMainContent() {
   return { description, examples };
 }
 
-// Score divs by word count × text-to-HTML ratio (avoids nav/footer noise)
 function scoreDivs() {
   const candidates = [...document.querySelectorAll('div, section, td')];
   let best = null, bestScore = 0;
 
   for (const el of candidates) {
-    // Skip tiny elements and obvious chrome
     if (el.offsetWidth < 200 || el.offsetHeight < 100) continue;
     if (/nav|header|footer|sidebar|menu|ad|cookie/i.test(
       el.className + " " + el.id
@@ -74,7 +67,6 @@ function scoreDivs() {
     const htmlLen = el.innerHTML.length;
     if (htmlLen === 0) continue;
 
-    // Higher score = more words, higher text density
     const density = text.length / htmlLen;
     const score = wordCount * density;
 
@@ -86,7 +78,6 @@ function scoreDivs() {
   return best;
 }
 
-// ─── Platform-specific extractors (unchanged / extended) ─────────────────────
 function extractLeetCode() {
   const title =
     document.querySelector('div.text-title-large')?.innerText ||
@@ -141,7 +132,6 @@ function extractCodeChef() {
   return { title: title.trim(), description: description.slice(0, 3000).trim(), examples };
 }
 
-// ─── Message listener ─────────────────────────────────────────────────────────
 chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
   if (req.action === "getProblem") {
     sendResponse(extractProblem());
