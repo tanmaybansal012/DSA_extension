@@ -1,0 +1,67 @@
+// ─── Prisma Schema for DSA Hint Assistant ───
+//
+// Three core models:
+//   User    — anonymous device-based identity (no auth for v1)
+//   Problem — coding problems from LeetCode/Codeforces with optional embeddings
+//   Hint    — generated hints linked to users and problems
+//
+// The Problem model includes a pgvector column (Unsupported type) for
+// RAG-based similar problem retrieval. Vector operations use raw SQL
+// since Prisma doesn't natively support pgvector operators.
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  directUrl  = env("DIRECT_URL")
+  extensions = [vector]
+}
+
+model User {
+  id        String   @id @default(uuid())
+  deviceId  String   @unique
+  createdAt DateTime @default(now())
+  hints     Hint[]
+
+  @@map("users")
+}
+
+model Problem {
+  id          String   @id @default(uuid())
+  platform    String   // "leetcode" | "codeforces"
+  title       String
+  url         String?  @unique
+  description String?
+  difficulty  String?  // "Easy" | "Medium" | "Hard"
+  topicTags   String[] // e.g. ["two-pointer", "binary-search"]
+  createdAt   DateTime @default(now())
+  hints       Hint[]
+
+  // pgvector embedding column — 768 dimensions for text-embedding-004
+  // Managed via raw SQL because Prisma doesn't support vector type natively.
+  // The column + index are created in a custom migration SQL file.
+  embedding   Unsupported("vector(768)")?
+
+  @@map("problems")
+}
+
+model Hint {
+  id         String   @id @default(uuid())
+  userId     String
+  problemId  String
+  level      Int      // 1=nudge, 2=approach, 3=algorithm, 4=skeleton
+  content    String
+  bookmarked Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id])
+  problem Problem @relation(fields: [problemId], references: [id])
+
+  @@index([userId, createdAt(sort: Desc)])
+  @@map("hints")
+}

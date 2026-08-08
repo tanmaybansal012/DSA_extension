@@ -6,11 +6,12 @@
   "permissions": ["activeTab", "scripting", "storage"],
   "host_permissions": [
     "https://leetcode.com/*", 
-    "https://codeforces.com/*"
+    "https://codeforces.com/*",
+    "http://localhost:3001/*"
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": { "48": "icons/icon48.png" }
+    "default_icon": { "48": "icon48.png" }
   },
   "content_scripts": [
     {

@@ -1,0 +1,1186 @@
+[
+  {
+    "leetcodeId": 1,
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice.",
+    "difficulty": "Easy",
+    "topicTags": ["array", "hash-table"],
+    "url": "https://leetcode.com/problems/two-sum/"
+  },
+  {
+    "leetcodeId": 2,
+    "title": "Add Two Numbers",
+    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.",
+    "difficulty": "Medium",
+    "topicTags": ["linked-list", "math", "recursion"],
+    "url": "https://leetcode.com/problems/add-two-numbers/"
+  },
+  {
+    "leetcodeId": 3,
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. Use a sliding window approach to efficiently track characters seen so far.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "sliding-window", "hash-table"],
+    "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+  },
+  {
+    "leetcodeId": 5,
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A palindrome reads the same forward and backward. Expand around center or use dynamic programming.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/longest-palindromic-substring/"
+  },
+  {
+    "leetcodeId": 11,
+    "title": "Container With Most Water",
+    "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]). Find two lines that together with the x-axis form a container, such that the container contains the most water.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "two-pointer", "greedy"],
+    "url": "https://leetcode.com/problems/container-with-most-water/"
+  },
+  {
+    "leetcodeId": 15,
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. The solution set must not contain duplicate triplets.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "two-pointer", "sorting"],
+    "url": "https://leetcode.com/problems/3sum/"
+  },
+  {
+    "leetcodeId": 17,
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. A mapping of digits to letters (just like on the telephone buttons) is given.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "backtracking"],
+    "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/"
+  },
+  {
+    "leetcodeId": 19,
+    "title": "Remove Nth Node From End of List",
+    "description": "Given the head of a linked list, remove the nth node from the end of the list and return its head. Use two pointers with a gap of n to find the node to remove in one pass.",
+    "difficulty": "Medium",
+    "topicTags": ["linked-list", "two-pointer"],
+    "url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
+  },
+  {
+    "leetcodeId": 20,
+    "title": "Valid Parentheses",
+    "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if open brackets are closed by the same type of brackets and in the correct order.",
+    "difficulty": "Easy",
+    "topicTags": ["string", "stack"],
+    "url": "https://leetcode.com/problems/valid-parentheses/"
+  },
+  {
+    "leetcodeId": 21,
+    "title": "Merge Two Sorted Lists",
+    "description": "You are given the heads of two sorted linked lists list1 and list2. Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.",
+    "difficulty": "Easy",
+    "topicTags": ["linked-list", "recursion"],
+    "url": "https://leetcode.com/problems/merge-two-sorted-lists/"
+  },
+  {
+    "leetcodeId": 22,
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. Use backtracking to build valid combinations by tracking open and close counts.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "backtracking", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/generate-parentheses/"
+  },
+  {
+    "leetcodeId": 23,
+    "title": "Merge k Sorted Lists",
+    "description": "You are given an array of k linked-lists lists, each linked-list is sorted in ascending order. Merge all the linked-lists into one sorted linked-list and return it. Use a min-heap or divide-and-conquer.",
+    "difficulty": "Hard",
+    "topicTags": ["linked-list", "heap", "divide-and-conquer"],
+    "url": "https://leetcode.com/problems/merge-k-sorted-lists/"
+  },
+  {
+    "leetcodeId": 33,
+    "title": "Search in Rotated Sorted Array",
+    "description": "There is an integer array nums sorted in ascending order with distinct values. The array is rotated at some pivot. Given the array after rotation and a target value, return the index of target if it is in the array, or -1 if it is not. Achieve O(log n) using modified binary search.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "binary-search"],
+    "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/"
+  },
+  {
+    "leetcodeId": 34,
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "description": "Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value. If target is not found, return [-1, -1]. Must run in O(log n) time using binary search.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "binary-search"],
+    "url": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/"
+  },
+  {
+    "leetcodeId": 39,
+    "title": "Combination Sum",
+    "description": "Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target. The same number may be chosen from candidates an unlimited number of times.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "backtracking"],
+    "url": "https://leetcode.com/problems/combination-sum/"
+  },
+  {
+    "leetcodeId": 42,
+    "title": "Trapping Rain Water",
+    "description": "Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining. Can be solved with two pointers, stack, or dynamic programming.",
+    "difficulty": "Hard",
+    "topicTags": ["array", "two-pointer", "stack", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/trapping-rain-water/"
+  },
+  {
+    "leetcodeId": 46,
+    "title": "Permutations",
+    "description": "Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order. Use backtracking with swapping or a visited set.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "backtracking"],
+    "url": "https://leetcode.com/problems/permutations/"
+  },
+  {
+    "leetcodeId": 48,
+    "title": "Rotate Image",
+    "description": "You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees clockwise. You have to rotate the image in-place. Transpose then reverse each row.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "math"],
+    "url": "https://leetcode.com/problems/rotate-image/"
+  },
+  {
+    "leetcodeId": 49,
+    "title": "Group Anagrams",
+    "description": "Given an array of strings strs, group the anagrams together. You can return the answer in any order. An anagram is a word formed by rearranging the letters of another word. Use sorted string or character frequency as hash key.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "hash-table", "sorting"],
+    "url": "https://leetcode.com/problems/group-anagrams/"
+  },
+  {
+    "leetcodeId": 53,
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the subarray with the largest sum, and return its sum. The subarray must contain at least one element. Use Kadane's algorithm for O(n) solution.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "dynamic-programming", "divide-and-conquer"],
+    "url": "https://leetcode.com/problems/maximum-subarray/"
+  },
+  {
+    "leetcodeId": 55,
+    "title": "Jump Game",
+    "description": "You are given an integer array nums. You are initially positioned at the array's first index, and each element represents your maximum jump length at that position. Return true if you can reach the last index.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "greedy", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/jump-game/"
+  },
+  {
+    "leetcodeId": 56,
+    "title": "Merge Intervals",
+    "description": "Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "sorting"],
+    "url": "https://leetcode.com/problems/merge-intervals/"
+  },
+  {
+    "leetcodeId": 62,
+    "title": "Unique Paths",
+    "description": "There is a robot on an m x n grid. The robot is initially located at the top-left corner. The robot can only move either down or right at any point in time. How many possible unique paths are there to reach the bottom-right corner?",
+    "difficulty": "Medium",
+    "topicTags": ["math", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/unique-paths/"
+  },
+  {
+    "leetcodeId": 70,
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? Classic dynamic programming / Fibonacci problem.",
+    "difficulty": "Easy",
+    "topicTags": ["math", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/climbing-stairs/"
+  },
+  {
+    "leetcodeId": 72,
+    "title": "Edit Distance",
+    "description": "Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2. You have three operations: insert a character, delete a character, replace a character. Classic 2D DP problem.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/edit-distance/"
+  },
+  {
+    "leetcodeId": 73,
+    "title": "Set Matrix Zeroes",
+    "description": "Given an m x n integer matrix, if an element is 0, set its entire row and column to 0's. You must do it in place. Use first row and column as markers for O(1) extra space.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "hash-table", "math"],
+    "url": "https://leetcode.com/problems/set-matrix-zeroes/"
+  },
+  {
+    "leetcodeId": 74,
+    "title": "Search a 2D Matrix",
+    "description": "You are given an m x n integer matrix. Each row is sorted in non-decreasing order. The first integer of each row is greater than the last integer of the previous row. Given an integer target, return true if target is in matrix. Treat as a flat sorted array and binary search.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "binary-search"],
+    "url": "https://leetcode.com/problems/search-a-2d-matrix/"
+  },
+  {
+    "leetcodeId": 76,
+    "title": "Minimum Window Substring",
+    "description": "Given two strings s and t, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string. Use sliding window technique.",
+    "difficulty": "Hard",
+    "topicTags": ["string", "sliding-window", "hash-table"],
+    "url": "https://leetcode.com/problems/minimum-window-substring/"
+  },
+  {
+    "leetcodeId": 78,
+    "title": "Subsets",
+    "description": "Given an integer array nums of unique elements, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Use backtracking or iterative bit manipulation.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "backtracking", "bit-manipulation"],
+    "url": "https://leetcode.com/problems/subsets/"
+  },
+  {
+    "leetcodeId": 79,
+    "title": "Word Search",
+    "description": "Given an m x n grid of characters board and a string word, return true if word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. Use DFS backtracking.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "backtracking"],
+    "url": "https://leetcode.com/problems/word-search/"
+  },
+  {
+    "leetcodeId": 84,
+    "title": "Largest Rectangle in Histogram",
+    "description": "Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram. Use a monotonic stack approach.",
+    "difficulty": "Hard",
+    "topicTags": ["array", "stack", "monotonic-stack"],
+    "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/"
+  },
+  {
+    "leetcodeId": 94,
+    "title": "Binary Tree Inorder Traversal",
+    "description": "Given the root of a binary tree, return the inorder traversal of its nodes' values. Can be done recursively or iteratively using a stack. Inorder: left, root, right.",
+    "difficulty": "Easy",
+    "topicTags": ["trees", "stack"],
+    "url": "https://leetcode.com/problems/binary-tree-inorder-traversal/"
+  },
+  {
+    "leetcodeId": 98,
+    "title": "Validate Binary Search Tree",
+    "description": "Given the root of a binary tree, determine if it is a valid binary search tree. A valid BST means for every node, all left subtree values are less and all right subtree values are greater. Use inorder traversal or recursive bounds checking.",
+    "difficulty": "Medium",
+    "topicTags": ["trees", "binary-search"],
+    "url": "https://leetcode.com/problems/validate-binary-search-tree/"
+  },
+  {
+    "leetcodeId": 100,
+    "title": "Same Tree",
+    "description": "Given the roots of two binary trees p and q, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.",
+    "difficulty": "Easy",
+    "topicTags": ["trees", "recursion"],
+    "url": "https://leetcode.com/problems/same-tree/"
+  },
+  {
+    "leetcodeId": 101,
+    "title": "Symmetric Tree",
+    "description": "Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center). Compare left subtree with right subtree recursively or using BFS.",
+    "difficulty": "Easy",
+    "topicTags": ["trees", "recursion"],
+    "url": "https://leetcode.com/problems/symmetric-tree/"
+  },
+  {
+    "leetcodeId": 102,
+    "title": "Binary Tree Level Order Traversal",
+    "description": "Given the root of a binary tree, return the level order traversal of its nodes' values (i.e., from left to right, level by level). Use BFS with a queue.",
+    "difficulty": "Medium",
+    "topicTags": ["trees", "queue"],
+    "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
+  },
+  {
+    "leetcodeId": 104,
+    "title": "Maximum Depth of Binary Tree",
+    "description": "Given the root of a binary tree, return its maximum depth. A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
+    "difficulty": "Easy",
+    "topicTags": ["trees", "recursion"],
+    "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
+  },
+  {
+    "leetcodeId": 105,
+    "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+    "description": "Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.",
+    "difficulty": "Medium",
+    "topicTags": ["trees", "divide-and-conquer", "hash-table"],
+    "url": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/"
+  },
+  {
+    "leetcodeId": 121,
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy and a single day to sell. Return the maximum profit, or 0 if no profit possible.",
+    "difficulty": "Easy",
+    "topicTags": ["array", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
+  },
+  {
+    "leetcodeId": 124,
+    "title": "Binary Tree Maximum Path Sum",
+    "description": "A path in a binary tree is a sequence of nodes where each pair of adjacent nodes has an edge connecting them. Given the root of a binary tree, return the maximum path sum of any non-empty path. Use post-order DFS.",
+    "difficulty": "Hard",
+    "topicTags": ["trees", "dynamic-programming", "recursion"],
+    "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/"
+  },
+  {
+    "leetcodeId": 125,
+    "title": "Valid Palindrome",
+    "description": "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Given a string s, return true if it is a palindrome.",
+    "difficulty": "Easy",
+    "topicTags": ["string", "two-pointer"],
+    "url": "https://leetcode.com/problems/valid-palindrome/"
+  },
+  {
+    "leetcodeId": 128,
+    "title": "Longest Consecutive Sequence",
+    "description": "Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence. You must write an algorithm that runs in O(n) time. Use a hash set to check for sequence starts.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "hash-table", "union-find"],
+    "url": "https://leetcode.com/problems/longest-consecutive-sequence/"
+  },
+  {
+    "leetcodeId": 130,
+    "title": "Surrounded Regions",
+    "description": "Given an m x n matrix board containing 'X' and 'O', capture all regions that are 4-directionally surrounded by 'X'. A region is captured by flipping all 'O's into 'X's. 'O's on the border cannot be captured. Use DFS/BFS from border cells.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "graphs"],
+    "url": "https://leetcode.com/problems/surrounded-regions/"
+  },
+  {
+    "leetcodeId": 131,
+    "title": "Palindrome Partitioning",
+    "description": "Given a string s, partition s such that every substring of the partition is a palindrome. Return all possible palindrome partitionings of s. Use backtracking with palindrome checking.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "backtracking", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/palindrome-partitioning/"
+  },
+  {
+    "leetcodeId": 133,
+    "title": "Clone Graph",
+    "description": "Given a reference of a node in a connected undirected graph, return a deep copy (clone) of the graph. Each node contains a value and a list of neighbors. Use BFS or DFS with a hash map to track cloned nodes.",
+    "difficulty": "Medium",
+    "topicTags": ["graphs", "hash-table"],
+    "url": "https://leetcode.com/problems/clone-graph/"
+  },
+  {
+    "leetcodeId": 138,
+    "title": "Copy List with Random Pointer",
+    "description": "A linked list of length n is given where each node contains an additional random pointer, which could point to any node in the list, or null. Construct a deep copy of the list. Use a hash map or interleaving technique.",
+    "difficulty": "Medium",
+    "topicTags": ["linked-list", "hash-table"],
+    "url": "https://leetcode.com/problems/copy-list-with-random-pointer/"
+  },
+  {
+    "leetcodeId": 139,
+    "title": "Word Break",
+    "description": "Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words. Use dynamic programming or BFS.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "dynamic-programming", "hash-table"],
+    "url": "https://leetcode.com/problems/word-break/"
+  },
+  {
+    "leetcodeId": 141,
+    "title": "Linked List Cycle",
+    "description": "Given head, the head of a linked list, determine if the linked list has a cycle in it. There is a cycle if a node can be reached again by continuously following the next pointer. Use Floyd's cycle detection (slow and fast pointers).",
+    "difficulty": "Easy",
+    "topicTags": ["linked-list", "two-pointer"],
+    "url": "https://leetcode.com/problems/linked-list-cycle/"
+  },
+  {
+    "leetcodeId": 143,
+    "title": "Reorder List",
+    "description": "You are given the head of a singly linked-list. Reorder it to: L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → ... You may not modify values in the list's nodes. Only nodes themselves may be changed. Find middle, reverse second half, merge.",
+    "difficulty": "Medium",
+    "topicTags": ["linked-list", "two-pointer"],
+    "url": "https://leetcode.com/problems/reorder-list/"
+  },
+  {
+    "leetcodeId": 146,
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. Implement the LRUCache class with get and put operations that run in O(1) average time. Use a hash map + doubly linked list.",
+    "difficulty": "Medium",
+    "topicTags": ["hash-table", "linked-list", "design"],
+    "url": "https://leetcode.com/problems/lru-cache/"
+  },
+  {
+    "leetcodeId": 148,
+    "title": "Sort List",
+    "description": "Given the head of a linked list, return the list after sorting it in ascending order. Use merge sort for O(n log n) time and O(1) space. Find middle with slow/fast pointers, split, sort recursively, merge.",
+    "difficulty": "Medium",
+    "topicTags": ["linked-list", "sorting", "divide-and-conquer"],
+    "url": "https://leetcode.com/problems/sort-list/"
+  },
+  {
+    "leetcodeId": 152,
+    "title": "Maximum Product Subarray",
+    "description": "Given an integer array nums, find a subarray that has the largest product, and return the product. Track both max and min products at each position because a negative number can flip min to max.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/maximum-product-subarray/"
+  },
+  {
+    "leetcodeId": 153,
+    "title": "Find Minimum in Rotated Sorted Array",
+    "description": "Suppose an array of length n sorted in ascending order is rotated between 1 and n times. Given the sorted rotated array nums of unique elements, return the minimum element. Use binary search in O(log n).",
+    "difficulty": "Medium",
+    "topicTags": ["array", "binary-search"],
+    "url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
+  },
+  {
+    "leetcodeId": 155,
+    "title": "Min Stack",
+    "description": "Design a stack that supports push, pop, top, and retrieving the minimum element in constant time. Use an auxiliary stack or store pairs of (value, currentMin) to achieve O(1) getMin.",
+    "difficulty": "Medium",
+    "topicTags": ["stack", "design"],
+    "url": "https://leetcode.com/problems/min-stack/"
+  },
+  {
+    "leetcodeId": 167,
+    "title": "Two Sum II - Input Array Is Sorted",
+    "description": "Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Use two pointers from both ends.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "two-pointer", "binary-search"],
+    "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/"
+  },
+  {
+    "leetcodeId": 169,
+    "title": "Majority Element",
+    "description": "Given an array nums of size n, return the majority element. The majority element is the element that appears more than ⌊n / 2⌋ times. Use Boyer-Moore voting algorithm for O(1) space.",
+    "difficulty": "Easy",
+    "topicTags": ["array", "hash-table", "sorting"],
+    "url": "https://leetcode.com/problems/majority-element/"
+  },
+  {
+    "leetcodeId": 189,
+    "title": "Rotate Array",
+    "description": "Given an integer array nums, rotate the array to the right by k steps, where k is non-negative. Do it in-place with O(1) extra space using the reverse technique: reverse all, reverse first k, reverse rest.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "math"],
+    "url": "https://leetcode.com/problems/rotate-array/"
+  },
+  {
+    "leetcodeId": 191,
+    "title": "Number of 1 Bits",
+    "description": "Write a function that takes the binary representation of a positive integer and returns the number of set bits it has (Hamming weight). Use n & (n-1) trick to clear the least significant set bit.",
+    "difficulty": "Easy",
+    "topicTags": ["bit-manipulation"],
+    "url": "https://leetcode.com/problems/number-of-1-bits/"
+  },
+  {
+    "leetcodeId": 198,
+    "title": "House Robber",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. Adjacent houses have security systems connected. You cannot rob two adjacent houses. Find the maximum amount of money you can rob. Classic 1D DP.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/house-robber/"
+  },
+  {
+    "leetcodeId": 200,
+    "title": "Number of Islands",
+    "description": "Given an m x n 2D binary grid which represents a map of '1's (land) and '0's (water), return the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. Use DFS or BFS to flood-fill each island.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "graphs"],
+    "url": "https://leetcode.com/problems/number-of-islands/"
+  },
+  {
+    "leetcodeId": 206,
+    "title": "Reverse Linked List",
+    "description": "Given the head of a singly linked list, reverse the list, and return the reversed list. Can be done iteratively with three pointers (prev, curr, next) or recursively.",
+    "difficulty": "Easy",
+    "topicTags": ["linked-list", "recursion"],
+    "url": "https://leetcode.com/problems/reverse-linked-list/"
+  },
+  {
+    "leetcodeId": 207,
+    "title": "Course Schedule",
+    "description": "There are a total of numCourses courses you have to take. Some courses have prerequisites. Determine if it is possible to finish all courses. This is cycle detection in a directed graph — use topological sort (BFS/Kahn's or DFS).",
+    "difficulty": "Medium",
+    "topicTags": ["graphs"],
+    "url": "https://leetcode.com/problems/course-schedule/"
+  },
+  {
+    "leetcodeId": 208,
+    "title": "Implement Trie (Prefix Tree)",
+    "description": "A trie (prefix tree) is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. Implement the Trie class with insert, search, and startsWith methods.",
+    "difficulty": "Medium",
+    "topicTags": ["trie", "string", "design"],
+    "url": "https://leetcode.com/problems/implement-trie-prefix-tree/"
+  },
+  {
+    "leetcodeId": 210,
+    "title": "Course Schedule II",
+    "description": "There are numCourses courses. Return the ordering of courses you should take to finish all courses. If impossible, return empty array. Use topological sort via BFS (Kahn's algorithm) or DFS with post-order.",
+    "difficulty": "Medium",
+    "topicTags": ["graphs"],
+    "url": "https://leetcode.com/problems/course-schedule-ii/"
+  },
+  {
+    "leetcodeId": 211,
+    "title": "Design Add and Search Words Data Structure",
+    "description": "Design a data structure that supports adding new words and finding if a string matches any previously added word, where '.' can match any letter. Use a Trie with DFS for wildcard matching.",
+    "difficulty": "Medium",
+    "topicTags": ["trie", "string", "design"],
+    "url": "https://leetcode.com/problems/design-add-and-search-words-data-structure/"
+  },
+  {
+    "leetcodeId": 212,
+    "title": "Word Search II",
+    "description": "Given an m x n board of characters and a list of strings words, return all words on the board. Each word must be constructed from letters of sequentially adjacent cells. Use Trie + DFS backtracking.",
+    "difficulty": "Hard",
+    "topicTags": ["array", "trie", "backtracking"],
+    "url": "https://leetcode.com/problems/word-search-ii/"
+  },
+  {
+    "leetcodeId": 215,
+    "title": "Kth Largest Element in an Array",
+    "description": "Given an integer array nums and an integer k, return the kth largest element in the array. Use a min-heap of size k, or quickselect for average O(n) time.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "heap", "sorting", "divide-and-conquer"],
+    "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
+  },
+  {
+    "leetcodeId": 217,
+    "title": "Contains Duplicate",
+    "description": "Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct. Use a hash set.",
+    "difficulty": "Easy",
+    "topicTags": ["array", "hash-table", "sorting"],
+    "url": "https://leetcode.com/problems/contains-duplicate/"
+  },
+  {
+    "leetcodeId": 226,
+    "title": "Invert Binary Tree",
+    "description": "Given the root of a binary tree, invert the tree, and return its root. Swap left and right children recursively or use BFS with a queue.",
+    "difficulty": "Easy",
+    "topicTags": ["trees", "recursion"],
+    "url": "https://leetcode.com/problems/invert-binary-tree/"
+  },
+  {
+    "leetcodeId": 230,
+    "title": "Kth Smallest Element in a BST",
+    "description": "Given the root of a binary search tree, and an integer k, return the kth smallest value in the tree. Use inorder traversal (iterative or recursive) and count nodes.",
+    "difficulty": "Medium",
+    "topicTags": ["trees", "binary-search"],
+    "url": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/"
+  },
+  {
+    "leetcodeId": 235,
+    "title": "Lowest Common Ancestor of a Binary Search Tree",
+    "description": "Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes. Leverage BST properties: if both nodes are smaller, go left; if both larger, go right; otherwise current node is LCA.",
+    "difficulty": "Medium",
+    "topicTags": ["trees", "binary-search"],
+    "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
+  },
+  {
+    "leetcodeId": 236,
+    "title": "Lowest Common Ancestor of a Binary Tree",
+    "description": "Given a binary tree, find the lowest common ancestor (LCA) of two given nodes. The LCA is the lowest node that has both p and q as descendants. Use recursive DFS.",
+    "difficulty": "Medium",
+    "topicTags": ["trees", "recursion"],
+    "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
+  },
+  {
+    "leetcodeId": 238,
+    "title": "Product of Array Except Self",
+    "description": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i]. You must write an algorithm that runs in O(n) time without using division. Use prefix and suffix products.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "prefix-sum"],
+    "url": "https://leetcode.com/problems/product-of-array-except-self/"
+  },
+  {
+    "leetcodeId": 239,
+    "title": "Sliding Window Maximum",
+    "description": "You are given an array of integers nums and an integer k. Return the max sliding window — the maximum value in each window of size k as it slides from left to right. Use a monotonic deque.",
+    "difficulty": "Hard",
+    "topicTags": ["array", "sliding-window", "queue", "monotonic-stack"],
+    "url": "https://leetcode.com/problems/sliding-window-maximum/"
+  },
+  {
+    "leetcodeId": 242,
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, return true if t is an anagram of s, and false otherwise. An anagram uses the same characters with the same frequencies. Use character frequency counting.",
+    "difficulty": "Easy",
+    "topicTags": ["string", "hash-table", "sorting"],
+    "url": "https://leetcode.com/problems/valid-anagram/"
+  },
+  {
+    "leetcodeId": 253,
+    "title": "Meeting Rooms II",
+    "description": "Given an array of meeting time intervals consisting of start and end times, find the minimum number of conference rooms required. Use a min-heap or sort start/end times separately.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "sorting", "heap"],
+    "url": "https://leetcode.com/problems/meeting-rooms-ii/"
+  },
+  {
+    "leetcodeId": 261,
+    "title": "Graph Valid Tree",
+    "description": "Given n nodes labeled from 0 to n-1 and a list of undirected edges, determine if these edges make up a valid tree. A valid tree has n-1 edges and is fully connected with no cycles. Use Union-Find or DFS.",
+    "difficulty": "Medium",
+    "topicTags": ["graphs", "union-find"],
+    "url": "https://leetcode.com/problems/graph-valid-tree/"
+  },
+  {
+    "leetcodeId": 268,
+    "title": "Missing Number",
+    "description": "Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array. Use XOR trick or sum formula.",
+    "difficulty": "Easy",
+    "topicTags": ["array", "math", "bit-manipulation"],
+    "url": "https://leetcode.com/problems/missing-number/"
+  },
+  {
+    "leetcodeId": 269,
+    "title": "Alien Dictionary",
+    "description": "There is a new alien language that uses the English alphabet. The order among letters is unknown. Given a list of words from the alien dictionary sorted lexicographically, derive the order of letters. Use topological sort.",
+    "difficulty": "Hard",
+    "topicTags": ["graphs", "string"],
+    "url": "https://leetcode.com/problems/alien-dictionary/"
+  },
+  {
+    "leetcodeId": 271,
+    "title": "Encode and Decode Strings",
+    "description": "Design an algorithm to encode a list of strings to a single string and decode it back. The encoded string is then sent over the network and decoded. Use length-prefixed encoding.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "design"],
+    "url": "https://leetcode.com/problems/encode-and-decode-strings/"
+  },
+  {
+    "leetcodeId": 287,
+    "title": "Find the Duplicate Number",
+    "description": "Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n], there is exactly one repeated number. Find it without modifying the array and using O(1) extra space. Use Floyd's cycle detection.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "two-pointer", "binary-search"],
+    "url": "https://leetcode.com/problems/find-the-duplicate-number/"
+  },
+  {
+    "leetcodeId": 295,
+    "title": "Find Median from Data Stream",
+    "description": "Design a data structure that supports adding integers and finding the median of all elements added so far. Use two heaps: a max-heap for the lower half and a min-heap for the upper half.",
+    "difficulty": "Hard",
+    "topicTags": ["heap", "design", "sorting"],
+    "url": "https://leetcode.com/problems/find-median-from-data-stream/"
+  },
+  {
+    "leetcodeId": 297,
+    "title": "Serialize and Deserialize Binary Tree",
+    "description": "Design an algorithm to serialize a binary tree to a string and deserialize the string back to a tree. Use preorder traversal with null markers.",
+    "difficulty": "Hard",
+    "topicTags": ["trees", "string", "design"],
+    "url": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
+  },
+  {
+    "leetcodeId": 300,
+    "title": "Longest Increasing Subsequence",
+    "description": "Given an integer array nums, return the length of the longest strictly increasing subsequence. Use DP in O(n^2) or patience sorting / binary search in O(n log n).",
+    "difficulty": "Medium",
+    "topicTags": ["array", "dynamic-programming", "binary-search"],
+    "url": "https://leetcode.com/problems/longest-increasing-subsequence/"
+  },
+  {
+    "leetcodeId": 322,
+    "title": "Coin Change",
+    "description": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. Return the fewest number of coins that you need to make up that amount. Classic unbounded knapsack DP.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/coin-change/"
+  },
+  {
+    "leetcodeId": 323,
+    "title": "Number of Connected Components in an Undirected Graph",
+    "description": "Given n nodes labeled from 0 to n-1 and a list of undirected edges, find the number of connected components in the graph. Use Union-Find or DFS/BFS.",
+    "difficulty": "Medium",
+    "topicTags": ["graphs", "union-find"],
+    "url": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/"
+  },
+  {
+    "leetcodeId": 338,
+    "title": "Counting Bits",
+    "description": "Given an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i. Use DP: ans[i] = ans[i >> 1] + (i & 1).",
+    "difficulty": "Easy",
+    "topicTags": ["dynamic-programming", "bit-manipulation"],
+    "url": "https://leetcode.com/problems/counting-bits/"
+  },
+  {
+    "leetcodeId": 347,
+    "title": "Top K Frequent Elements",
+    "description": "Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order. Use a hash map + bucket sort or min-heap.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "hash-table", "heap", "sorting"],
+    "url": "https://leetcode.com/problems/top-k-frequent-elements/"
+  },
+  {
+    "leetcodeId": 371,
+    "title": "Sum of Two Integers",
+    "description": "Given two integers a and b, return the sum of the two integers without using the operators + and -. Use bit manipulation: XOR for addition without carry, AND + shift for carry.",
+    "difficulty": "Medium",
+    "topicTags": ["math", "bit-manipulation"],
+    "url": "https://leetcode.com/problems/sum-of-two-integers/"
+  },
+  {
+    "leetcodeId": 394,
+    "title": "Decode String",
+    "description": "Given an encoded string like '3[a2[c]]', return the decoded string 'accaccacc'. The encoding rule is k[encoded_string]. Use a stack to handle nested patterns.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "stack", "recursion"],
+    "url": "https://leetcode.com/problems/decode-string/"
+  },
+  {
+    "leetcodeId": 417,
+    "title": "Pacific Atlantic Water Flow",
+    "description": "Given an m x n matrix of heights, water can flow to adjacent cells with height less than or equal. Find all cells that can reach both the Pacific and Atlantic oceans. Use DFS/BFS from ocean borders.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "graphs"],
+    "url": "https://leetcode.com/problems/pacific-atlantic-water-flow/"
+  },
+  {
+    "leetcodeId": 424,
+    "title": "Longest Repeating Character Replacement",
+    "description": "You are given a string s and an integer k. You can choose any character and change it to any other character at most k times. Return the length of the longest substring containing the same letter you can get. Use sliding window.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "sliding-window"],
+    "url": "https://leetcode.com/problems/longest-repeating-character-replacement/"
+  },
+  {
+    "leetcodeId": 435,
+    "title": "Non-overlapping Intervals",
+    "description": "Given an array of intervals, return the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping. Sort by end time and greedily select non-overlapping intervals.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "sorting", "greedy"],
+    "url": "https://leetcode.com/problems/non-overlapping-intervals/"
+  },
+  {
+    "leetcodeId": 572,
+    "title": "Subtree of Another Tree",
+    "description": "Given the roots of two binary trees root and subRoot, return true if there is a subtree of root with the same structure and node values of subRoot. Check each node as a potential root using isSameTree.",
+    "difficulty": "Easy",
+    "topicTags": ["trees", "recursion"],
+    "url": "https://leetcode.com/problems/subtree-of-another-tree/"
+  },
+  {
+    "leetcodeId": 647,
+    "title": "Palindromic Substrings",
+    "description": "Given a string s, return the number of palindromic substrings in it. A string is a palindrome when it reads the same backward as forward. Expand around each center (2n-1 centers).",
+    "difficulty": "Medium",
+    "topicTags": ["string", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/palindromic-substrings/"
+  },
+  {
+    "leetcodeId": 695,
+    "title": "Max Area of Island",
+    "description": "Given a 2D binary grid, find the maximum area of an island. An island is a group of 1's (representing land) connected 4-directionally. Use DFS to compute each island's area.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "graphs"],
+    "url": "https://leetcode.com/problems/max-area-of-island/"
+  },
+  {
+    "leetcodeId": 704,
+    "title": "Binary Search",
+    "description": "Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, return its index. Otherwise, return -1. Classic binary search.",
+    "difficulty": "Easy",
+    "topicTags": ["array", "binary-search"],
+    "url": "https://leetcode.com/problems/binary-search/"
+  },
+  {
+    "leetcodeId": 721,
+    "title": "Accounts Merge",
+    "description": "Given a list of accounts where each element is a list of strings [name, email1, email2, ...], merge accounts belonging to the same person. Two accounts belong to the same person if they share a common email. Use Union-Find.",
+    "difficulty": "Medium",
+    "topicTags": ["graphs", "union-find", "sorting"],
+    "url": "https://leetcode.com/problems/accounts-merge/"
+  },
+  {
+    "leetcodeId": 739,
+    "title": "Daily Temperatures",
+    "description": "Given an array of integers temperatures represents daily temperatures, return an array such that answer[i] is the number of days you have to wait after the ith day to get a warmer temperature. Use a monotonic stack.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "stack", "monotonic-stack"],
+    "url": "https://leetcode.com/problems/daily-temperatures/"
+  },
+  {
+    "leetcodeId": 743,
+    "title": "Network Delay Time",
+    "description": "You are given a network of n nodes and times, a list of travel times as directed edges. Send a signal from a given node k, return the minimum time for all nodes to receive the signal. Use Dijkstra's algorithm.",
+    "difficulty": "Medium",
+    "topicTags": ["graphs", "heap"],
+    "url": "https://leetcode.com/problems/network-delay-time/"
+  },
+  {
+    "leetcodeId": 746,
+    "title": "Min Cost Climbing Stairs",
+    "description": "You are given an integer array cost where cost[i] is the cost of ith step on a staircase. You can start from index 0 or 1. Find the minimum cost to reach the top. Simple 1D DP similar to climbing stairs.",
+    "difficulty": "Easy",
+    "topicTags": ["array", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/min-cost-climbing-stairs/"
+  },
+  {
+    "leetcodeId": 763,
+    "title": "Partition Labels",
+    "description": "You are given a string s. Partition the string into as many parts as possible so that each letter appears in at most one part. Return a list of integers representing the size of these parts. Use greedy with last occurrence tracking.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "greedy", "hash-table"],
+    "url": "https://leetcode.com/problems/partition-labels/"
+  },
+  {
+    "leetcodeId": 787,
+    "title": "Cheapest Flights Within K Stops",
+    "description": "There are n cities connected by flights with prices. Find the cheapest price from src to dst with at most k stops. Use BFS with level tracking, Bellman-Ford, or modified Dijkstra.",
+    "difficulty": "Medium",
+    "topicTags": ["graphs", "dynamic-programming", "heap"],
+    "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
+  },
+  {
+    "leetcodeId": 846,
+    "title": "Hand of Straights",
+    "description": "Alice has some number of cards. She wants to rearrange the cards into groups so that each group is of size groupSize, and consists of consecutive cards. Return true if she can. Use a sorted map/frequency counter with greedy assignment.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "greedy", "sorting"],
+    "url": "https://leetcode.com/problems/hand-of-straights/"
+  },
+  {
+    "leetcodeId": 853,
+    "title": "Car Fleet",
+    "description": "There are n cars going to a destination at position target. Each car starts at a certain position with a certain speed. A car can never pass another car, but it can catch up and travel at the same speed. Count the number of car fleets arriving at the target. Use a monotonic stack approach.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "stack", "sorting"],
+    "url": "https://leetcode.com/problems/car-fleet/"
+  },
+  {
+    "leetcodeId": 875,
+    "title": "Koko Eating Bananas",
+    "description": "Koko loves to eat bananas. There are n piles. Guards return in h hours. Find the minimum eating speed k such that she can eat all bananas within h hours. Binary search on the answer.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "binary-search"],
+    "url": "https://leetcode.com/problems/koko-eating-bananas/"
+  },
+  {
+    "leetcodeId": 973,
+    "title": "K Closest Points to Origin",
+    "description": "Given an array of points and an integer k, return the k closest points to the origin (0, 0). Use a max-heap of size k, or quickselect, or simple sort by distance.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "heap", "sorting", "divide-and-conquer"],
+    "url": "https://leetcode.com/problems/k-closest-points-to-origin/"
+  },
+  {
+    "leetcodeId": 981,
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value data structure that can store multiple values for the same key at different timestamps and retrieve the key's value at a certain timestamp. Use a hash map with sorted lists and binary search.",
+    "difficulty": "Medium",
+    "topicTags": ["hash-table", "binary-search", "design"],
+    "url": "https://leetcode.com/problems/time-based-key-value-store/"
+  },
+  {
+    "leetcodeId": 994,
+    "title": "Rotting Oranges",
+    "description": "You are given an m x n grid where each cell is either empty, a fresh orange, or a rotten orange. Every minute, any fresh orange adjacent to a rotten orange becomes rotten. Return the minimum number of minutes to rot all oranges, or -1 if impossible. Multi-source BFS.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "graphs", "queue"],
+    "url": "https://leetcode.com/problems/rotting-oranges/"
+  },
+  {
+    "leetcodeId": 1143,
+    "title": "Longest Common Subsequence",
+    "description": "Given two strings text1 and text2, return the length of their longest common subsequence. A subsequence maintains relative order but not necessarily contiguity. Classic 2D DP problem.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/longest-common-subsequence/"
+  },
+  {
+    "leetcodeId": 1046,
+    "title": "Last Stone Weight",
+    "description": "You are given an array of integers stones where stones[i] is the weight of the ith stone. On each turn, choose the two heaviest stones and smash them together. Return the weight of the last remaining stone. Use a max-heap.",
+    "difficulty": "Easy",
+    "topicTags": ["array", "heap"],
+    "url": "https://leetcode.com/problems/last-stone-weight/"
+  },
+  {
+    "leetcodeId": 1584,
+    "title": "Min Cost to Connect All Points",
+    "description": "You are given an array of points and the cost of connecting two points is the Manhattan distance. Return the minimum cost to make all points connected. Use Prim's or Kruskal's minimum spanning tree algorithm.",
+    "difficulty": "Medium",
+    "topicTags": ["graphs", "heap", "union-find"],
+    "url": "https://leetcode.com/problems/min-cost-to-connect-all-points/"
+  },
+  {
+    "leetcodeId": 57,
+    "title": "Insert Interval",
+    "description": "You are given an array of non-overlapping intervals sorted by start time and a new interval. Insert the new interval into the intervals and merge if necessary. Return the array of intervals after the insertion.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "sorting"],
+    "url": "https://leetcode.com/problems/insert-interval/"
+  },
+  {
+    "leetcodeId": 543,
+    "title": "Diameter of Binary Tree",
+    "description": "Given the root of a binary tree, return the length of the diameter of the tree. The diameter is the length of the longest path between any two nodes. This path may or may not pass through the root. Use DFS returning height.",
+    "difficulty": "Easy",
+    "topicTags": ["trees", "recursion"],
+    "url": "https://leetcode.com/problems/diameter-of-binary-tree/"
+  },
+  {
+    "leetcodeId": 572,
+    "title": "Subtree of Another Tree",
+    "description": "Given two binary trees, check if the second tree is a subtree of the first. A subtree consists of a node and all of its descendants. Use recursive comparison at each node.",
+    "difficulty": "Easy",
+    "topicTags": ["trees", "recursion"],
+    "url": "https://leetcode.com/problems/subtree-of-another-tree/"
+  },
+  {
+    "leetcodeId": 199,
+    "title": "Binary Tree Right Side View",
+    "description": "Given the root of a binary tree, return the values of the nodes you can see ordered from top to bottom when looking at the tree from the right side. Use BFS level order traversal, taking last node per level.",
+    "difficulty": "Medium",
+    "topicTags": ["trees", "queue"],
+    "url": "https://leetcode.com/problems/binary-tree-right-side-view/"
+  },
+  {
+    "leetcodeId": 110,
+    "title": "Balanced Binary Tree",
+    "description": "Given a binary tree, determine if it is height-balanced. A height-balanced binary tree is one in which the depth of the two subtrees of every node never differs by more than one. Use bottom-up recursion.",
+    "difficulty": "Easy",
+    "topicTags": ["trees", "recursion"],
+    "url": "https://leetcode.com/problems/balanced-binary-tree/"
+  },
+  {
+    "leetcodeId": 1448,
+    "title": "Count Good Nodes in Binary Tree",
+    "description": "Given a binary tree, a node X is good if in the path from root to X there are no nodes with a value greater than X. Return the number of good nodes. Use DFS with max tracking.",
+    "difficulty": "Medium",
+    "topicTags": ["trees", "recursion"],
+    "url": "https://leetcode.com/problems/count-good-nodes-in-binary-tree/"
+  },
+  {
+    "leetcodeId": 25,
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list. If the number of nodes is not a multiple of k, leave the remaining nodes as is.",
+    "difficulty": "Hard",
+    "topicTags": ["linked-list", "recursion"],
+    "url": "https://leetcode.com/problems/reverse-nodes-in-k-group/"
+  },
+  {
+    "leetcodeId": 36,
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the rules: each row, column, and 3x3 sub-box must contain digits 1-9 without repetition.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "hash-table"],
+    "url": "https://leetcode.com/problems/valid-sudoku/"
+  },
+  {
+    "leetcodeId": 659,
+    "title": "Encode and Decode TinyURL",
+    "description": "TinyURL is a URL shortening service. Design the encode and decode methods. Generate a random short code mapped to the long URL in a hash map.",
+    "difficulty": "Medium",
+    "topicTags": ["hash-table", "design", "string"],
+    "url": "https://leetcode.com/problems/encode-and-decode-tinyurl/"
+  },
+  {
+    "leetcodeId": 355,
+    "title": "Design Twitter",
+    "description": "Design a simplified version of Twitter where users can post tweets, follow/unfollow another user, and get the 10 most recent tweet IDs in the user's news feed. Use a hash map + min-heap merge.",
+    "difficulty": "Medium",
+    "topicTags": ["hash-table", "heap", "design"],
+    "url": "https://leetcode.com/problems/design-twitter/"
+  },
+  {
+    "leetcodeId": 40,
+    "title": "Combination Sum II",
+    "description": "Given a collection of candidate numbers and a target, find all unique combinations where the chosen numbers sum to target. Each number may only be used once. Use backtracking with sorting to skip duplicates.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "backtracking"],
+    "url": "https://leetcode.com/problems/combination-sum-ii/"
+  },
+  {
+    "leetcodeId": 90,
+    "title": "Subsets II",
+    "description": "Given an integer array nums that may contain duplicates, return all possible subsets. The solution set must not contain duplicate subsets. Sort first, then use backtracking skipping duplicate elements.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "backtracking"],
+    "url": "https://leetcode.com/problems/subsets-ii/"
+  },
+  {
+    "leetcodeId": 51,
+    "title": "N-Queens",
+    "description": "Place n queens on an n×n chessboard so that no two queens attack each other. Return all distinct solutions. Use backtracking with column, diagonal, and anti-diagonal tracking.",
+    "difficulty": "Hard",
+    "topicTags": ["array", "backtracking"],
+    "url": "https://leetcode.com/problems/n-queens/"
+  },
+  {
+    "leetcodeId": 10,
+    "title": "Regular Expression Matching",
+    "description": "Given a string s and a pattern p, implement regular expression matching with support for '.' and '*'. '.' matches any single character, '*' matches zero or more of the preceding element. Use 2D DP.",
+    "difficulty": "Hard",
+    "topicTags": ["string", "dynamic-programming", "recursion"],
+    "url": "https://leetcode.com/problems/regular-expression-matching/"
+  },
+  {
+    "leetcodeId": 312,
+    "title": "Burst Balloons",
+    "description": "You are given n balloons indexed from 0 to n-1. Each balloon is painted with a number. You burst balloons to collect coins. Return the maximum coins you can collect by bursting the balloons wisely. Use interval DP.",
+    "difficulty": "Hard",
+    "topicTags": ["array", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/burst-balloons/"
+  },
+  {
+    "leetcodeId": 329,
+    "title": "Longest Increasing Path in a Matrix",
+    "description": "Given an m x n integers matrix, return the length of the longest increasing path. From each cell, you can move in four directions. Use DFS with memoization.",
+    "difficulty": "Hard",
+    "topicTags": ["array", "dynamic-programming", "graphs"],
+    "url": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/"
+  },
+  {
+    "leetcodeId": 4,
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays nums1 and nums2, return the median of the two sorted arrays. The overall run time complexity should be O(log(min(m,n))). Use binary search on the smaller array to find the partition.",
+    "difficulty": "Hard",
+    "topicTags": ["array", "binary-search", "divide-and-conquer"],
+    "url": "https://leetcode.com/problems/median-of-two-sorted-arrays/"
+  },
+  {
+    "leetcodeId": 127,
+    "title": "Word Ladder",
+    "description": "Given two words beginWord and endWord, and a dictionary wordList, return the number of words in the shortest transformation sequence from beginWord to endWord, changing one letter at a time. Use BFS.",
+    "difficulty": "Hard",
+    "topicTags": ["string", "graphs", "hash-table"],
+    "url": "https://leetcode.com/problems/word-ladder/"
+  },
+  {
+    "leetcodeId": 332,
+    "title": "Reconstruct Itinerary",
+    "description": "You are given a list of airline tickets where tickets[i] = [fromi, toi]. Reconstruct the itinerary in order starting from 'JFK'. Use Hierholzer's algorithm for finding an Eulerian path.",
+    "difficulty": "Hard",
+    "topicTags": ["graphs"],
+    "url": "https://leetcode.com/problems/reconstruct-itinerary/"
+  },
+  {
+    "leetcodeId": 778,
+    "title": "Swim in Rising Water",
+    "description": "You are given an n x n grid where each cell has an elevation. Starting from the top left, reach the bottom right. At time t, you can swim to any adjacent cell with elevation <= t. Find the minimum time. Use binary search + BFS or Dijkstra.",
+    "difficulty": "Hard",
+    "topicTags": ["graphs", "binary-search", "heap"],
+    "url": "https://leetcode.com/problems/swim-in-rising-water/"
+  },
+  {
+    "leetcodeId": 115,
+    "title": "Distinct Subsequences",
+    "description": "Given two strings s and t, return the number of distinct subsequences of s which equals t. Use 2D DP where dp[i][j] represents number of ways to match t[0..j] using s[0..i].",
+    "difficulty": "Hard",
+    "topicTags": ["string", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/distinct-subsequences/"
+  },
+  {
+    "leetcodeId": 518,
+    "title": "Coin Change II",
+    "description": "You are given an integer array coins and an integer amount. Return the number of combinations that make up that amount. You may use each coin an unlimited number of times. Unbounded knapsack DP.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/coin-change-ii/"
+  },
+  {
+    "leetcodeId": 494,
+    "title": "Target Sum",
+    "description": "Given an integer array nums and an integer target, return the number of different expressions that can be built by adding '+' or '-' before each integer to reach the target. Use DP or DFS with memoization.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "dynamic-programming", "backtracking"],
+    "url": "https://leetcode.com/problems/target-sum/"
+  },
+  {
+    "leetcodeId": 97,
+    "title": "Interleaving String",
+    "description": "Given strings s1, s2, and s3, determine whether s3 is formed by an interleaving of s1 and s2. An interleaving preserves the relative order of characters. Use 2D DP.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/interleaving-string/"
+  },
+  {
+    "leetcodeId": 416,
+    "title": "Partition Equal Subset Sum",
+    "description": "Given an integer array nums, return true if you can partition the array into two subsets such that the sum of elements in both subsets is equal. 0/1 knapsack DP with target = totalSum/2.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/partition-equal-subset-sum/"
+  },
+  {
+    "leetcodeId": 1899,
+    "title": "Merge Triplets to Form Target Triplet",
+    "description": "You are given a 2D integer array triplets, where triplets[i] = [ai, bi, ci], and a target triplet. Determine whether it is possible to update any triplet by taking the max of corresponding values to reach the target. Greedy approach.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "greedy"],
+    "url": "https://leetcode.com/problems/merge-triplets-to-form-target-triplet/"
+  },
+  {
+    "leetcodeId": 678,
+    "title": "Valid Parenthesis String",
+    "description": "Given a string s containing '(', ')' and '*' where '*' can be '(', ')' or empty, determine if the string is valid. Use greedy with min/max open count tracking.",
+    "difficulty": "Medium",
+    "topicTags": ["string", "greedy", "dynamic-programming"],
+    "url": "https://leetcode.com/problems/valid-parenthesis-string/"
+  },
+  {
+    "leetcodeId": 1851,
+    "title": "Minimum Interval to Include Each Query",
+    "description": "Given 2D integer array intervals and an integer array queries, for each query find the size of the smallest interval that contains it. Sort intervals and queries, use a min-heap.",
+    "difficulty": "Hard",
+    "topicTags": ["array", "sorting", "heap"],
+    "url": "https://leetcode.com/problems/minimum-interval-to-include-each-query/"
+  },
+  {
+    "leetcodeId": 190,
+    "title": "Reverse Bits",
+    "description": "Reverse bits of a given 32 bits unsigned integer. Process each bit and build the reversed result using bit manipulation.",
+    "difficulty": "Easy",
+    "topicTags": ["bit-manipulation"],
+    "url": "https://leetcode.com/problems/reverse-bits/"
+  },
+  {
+    "leetcodeId": 136,
+    "title": "Single Number",
+    "description": "Given a non-empty array of integers nums, every element appears twice except for one. Find that single one. Use XOR — a ^ a = 0, so XOR of all elements leaves the unique one.",
+    "difficulty": "Easy",
+    "topicTags": ["array", "bit-manipulation"],
+    "url": "https://leetcode.com/problems/single-number/"
+  },
+  {
+    "leetcodeId": 261,
+    "title": "Graph Valid Tree",
+    "description": "You have a graph of n nodes and a list of undirected edges. Determine whether these edges form a valid tree. Check: exactly n-1 edges and fully connected (no cycles). Use Union-Find or DFS.",
+    "difficulty": "Medium",
+    "topicTags": ["graphs", "union-find"],
+    "url": "https://leetcode.com/problems/graph-valid-tree/"
+  },
+  {
+    "leetcodeId": 286,
+    "title": "Walls and Gates",
+    "description": "Given an m x n grid filled with empty rooms, walls, and gates, fill each empty room with the distance to its nearest gate. If impossible, leave as INF. Multi-source BFS from all gates simultaneously.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "graphs", "queue"],
+    "url": "https://leetcode.com/problems/walls-and-gates/"
+  },
+  {
+    "leetcodeId": 1761,
+    "title": "Minimum Degree of a Connected Trio in a Graph",
+    "description": "Given an undirected graph, find the minimum degree of a connected trio (three nodes that are all pairwise connected). The degree is the number of edges connected to the trio from outside nodes.",
+    "difficulty": "Hard",
+    "topicTags": ["graphs"],
+    "url": "https://leetcode.com/problems/minimum-degree-of-a-connected-trio-in-a-graph/"
+  },
+  {
+    "leetcodeId": 303,
+    "title": "Range Sum Query - Immutable",
+    "description": "Given an integer array nums, handle multiple queries of the type: calculate the sum of elements between indices left and right inclusive. Use a prefix sum array for O(1) per query.",
+    "difficulty": "Easy",
+    "topicTags": ["array", "prefix-sum", "design"],
+    "url": "https://leetcode.com/problems/range-sum-query-immutable/"
+  },
+  {
+    "leetcodeId": 560,
+    "title": "Subarray Sum Equals K",
+    "description": "Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals k. Use prefix sum with a hash map to count prefix sums seen so far.",
+    "difficulty": "Medium",
+    "topicTags": ["array", "hash-table", "prefix-sum"],
+    "url": "https://leetcode.com/problems/subarray-sum-equals-k/"
+  },
+  {
+    "leetcodeId": 1,
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. Each input has exactly one solution. Use a hash map for O(n).",
+    "difficulty": "Easy",
+    "topicTags": ["array", "hash-table"],
+    "url": "https://leetcode.com/problems/two-sum/"
+  }
+]
