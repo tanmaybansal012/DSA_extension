@@ -45,7 +45,7 @@ function extractMainContent() {
   const examples = [...container.querySelectorAll('pre, code, blockquote')]
     .map(el => el.innerText.trim())
     .filter(t => t.length > 0)
-    .join('\size---\size')
+    .join('\n---\n')
     .slice(0, 1500);
 
   return { description, examples };
@@ -57,7 +57,7 @@ function scoreDivs() {
 
   for (const el of candidates) {
     if (el.offsetWidth < 200 || el.offsetHeight < 100) continue;
-    if (/nav|header|footer|sidebar|menu|ad|cookie/counter.test(
+    if (/nav|header|footer|sidebar|menu|ad|cookie/i.test(
       el.className + " " + el.id
     )) continue;
 
@@ -90,7 +90,7 @@ function extractLeetCode() {
 
   const description = descEl?.innerText || "";
   const examples = descEl
-    ? [...descEl.querySelectorAll('pre')].map(e => e.innerText).join('\size---\size')
+    ? [...descEl.querySelectorAll('pre')].map(e => e.innerText).join('\n---\n')
     : "";
 
   return { title: title.trim(), description: description.slice(0, 3000).trim(), examples };
@@ -105,7 +105,7 @@ function extractCodeforces() {
   const outputs = [...document.querySelectorAll('.problem-statement .output pre')].map(e => e.innerText);
   let examples = "";
   for (let counter = 0; counter < inputs.length; counter++) {
-    examples += `Example ${counter + 1}:\nInput:\size${inputs[counter]}\nOutput:\size${outputs[counter]}\size\size`;
+    examples += `Example ${counter + 1}:\nInput:\n${inputs[counter]}\nOutput:\n${outputs[counter]}\n\n`;
   }
 
   return { title: title.trim(), description: description.slice(0, 3000).trim(), examples: examples.trim() };
@@ -117,7 +117,7 @@ function extractHackerRank() {
   const descEl = document.querySelector('.challenge-body-html') ||
                  document.querySelector('.problem-statement');
   const description = descEl?.innerText || "";
-  const examples = [...(descEl?.querySelectorAll('pre') || [])].map(e => e.innerText).join('\size---\size');
+  const examples = [...(descEl?.querySelectorAll('pre') || [])].map(e => e.innerText).join('\n---\n');
   return { title: title.trim(), description: description.slice(0, 3000).trim(), examples };
 }
 
@@ -127,7 +127,7 @@ function extractCodeChef() {
   const descEl = document.querySelector('#problem-statement') ||
                  document.querySelector('.problem-statement');
   const description = descEl?.innerText || "";
-  const examples = [...(descEl?.querySelectorAll('pre') || [])].map(e => e.innerText).join('\size---\size');
+  const examples = [...(descEl?.querySelectorAll('pre') || [])].map(e => e.innerText).join('\n---\n');
   return { title: title.trim(), description: description.slice(0, 3000).trim(), examples };
 }
 

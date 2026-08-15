@@ -2,8 +2,8 @@
  * config.ts — Environment Configuration
  *
  * Loads environment variables from .env and exports a typed config object.
- * Validates that all required variables are present at startup to fail fast
- * rather than crashing later when a missing key is first used.
+ * DATABASE_URL and REDIS_URL are optional — the app degrades gracefully
+ * without them (no persistence, no caching).
  */
 import "dotenv/config";
 
@@ -12,7 +12,7 @@ interface Config {
   geminiApiKey: string;
   geminiModel: string;
   embeddingModel: string;
-  databaseUrl: string;
+  databaseUrl: string | undefined;
   redisUrl: string;
 }
 
@@ -28,7 +28,7 @@ export const config: Config = {
   port: parseInt(process.env.PORT || "3001", 10),
   geminiApiKey: requireEnv("GEMINI_API_KEY"),
   geminiModel: process.env.GEMINI_MODEL || "gemini-2.5-flash",
-  embeddingModel: process.env.EMBEDDING_MODEL || "text-embedding-3-large",
-  databaseUrl: requireEnv("DATABASE_URL"),
+  embeddingModel: process.env.EMBEDDING_MODEL || "text-embedding-004",
+  databaseUrl: process.env.DATABASE_URL || undefined,
   redisUrl: process.env.REDIS_URL || "redis://localhost:6379",
 };

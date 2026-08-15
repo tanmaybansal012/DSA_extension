@@ -1,118 +1,112 @@
-# DSA Hint Assistant (Code Mentor AI)
+# Code Mentor AI — DSA Hint Assistant
 
-DSA Hint Assistant is a Chrome Extension backed by a Node.js/Express backend. It helps competitive programmers and interview prep learners get tiered hints, discover similar problems, and classify DSA topics directly from the browser.
+A Chrome Extension that provides AI-powered progressive hints for LeetCode and Codeforces problems. Uses a local Node.js backend powered by Google's Gemini 2.5 Flash.
 
-## What It Does
+## Features
 
-- Provides tiered DSA hints for a problem statement.
-- Streams hints via Server-Sent Events (SSE) for fast, real-time responses.
-- Recommends similar problems using pgvector semantic search.
-- Saves hint history and bookmarks on the backend.
-- Classifies problems into DSA topic tags and caches results in Redis.
+- **3-Level Progressive Hints**: Nudge → Approach → Near-solution, each building on the previous
+- **Similar Problem Discovery**: Finds related problems from a curated dataset using AI topic classification
+- **Real-time Streaming**: Hints stream in via Server-Sent Events as they're generated
+- **Smart Caching**: Redis caching (optional) to avoid duplicate API calls
+- **Dark/Light Theme**: Toggle between themes in the extension popup
 
-## Project Structure
+## Quick Start
 
-- `background.js` — extension background logic.
-- `content.js` — scrapes problem data from the browser page.
-- `popup.html` / `popup.js` — extension UI and frontend interaction.
-- `manifest.json` — Chrome extension manifest.
-- `server/` — backend code, database schema, and ingestion scripts.
-
-### Backend Structure
-
-- `server/src/app.ts` — Express setup, middleware, and routes.
-- `server/src/index.ts` — server startup and Redis initialization.
-- `server/src/routes/` — API routes for hints, similar problems, history, and health.
-- `server/src/services/` — Gemini, embedding, classification, and caching services.
-- `server/prisma/schema.prisma` — database schema for users, problems, and hints.
-- `server/scripts/ingest-problems.ts` — offline ingestion of problem data and embeddings.
-
-## Prerequisites
-
-To run the backend locally, install:
-
-1. Node.js 18+
-2. PostgreSQL 15+ with `pgvector`
-3. Redis 6+
-4. A Gemini API key
-
-## Setup
-
-### 1. Install Backend Dependencies
+### 1. Backend Setup
 
 ```bash
 cd server
 npm install
 ```
 
-### 2. Configure Environment Variables
+### 2. Configure API Key
 
 ```bash
 copy .env.example .env
 ```
 
-Then edit `.env` and set:
-
-- `GEMINI_API_KEY`
-- `DATABASE_URL`
-- `REDIS_URL`
-- `GEMINI_MODEL` (optional)
-- `EMBEDDING_MODEL` (optional)
-
-### 3. Set Up the Database
-
-```bash
-npx prisma migrate dev --name init
+Edit `.env` and set your Gemini API key:
+```
+GEMINI_API_KEY=your_key_here
 ```
 
-If the migration fails because `vector` is missing, install the `pgvector` extension in your Postgres instance.
+Get a key at [Google AI Studio](https://aistudio.google.com/apikey).
 
-### 4. Ingest Problem Data
+> **Note**: Postgres and Redis are **optional**. The app works fully without them — hints, similar problems, and topic classification all work standalone.
 
-```bash
-npm run ingest 
-```
-
-This script loads the curated problem dataset and generates embeddings for RAG search.
-
-### 5. Start the Backend 
+### 3. Start the Backend
 
 ```bash
 npm run dev
 ```
 
-The backend starts on `http://localhost:3001` by default.
+The server starts on `http://localhost:3001`.
 
-## Load the Chrome Extension
+### 4. Load the Chrome Extension
 
-1. Open Chrome and go to `chrome://extensions/`.
-2. Enable **Developer mode**.
-3. Click **Load unpacked**.
-4. Select the `DSA_extension` project root.
+1. Open `chrome://extensions/`
+2. Enable **Developer mode**
+3. Click **Load unpacked**
+4. Select the `DSA_extension` project root folder
+
+### 5. Use It
+
+1. Navigate to any LeetCode or Codeforces problem
+2. Click the extension icon
+3. Click **Get Hint** for a Level 1 nudge
+4. Click **Level 2** / **Level 3** for progressively detailed hints
+5. Click **Similar** to find related practice problems
+
+## Environment Variables
+
+| Variable | Required | Default | Description |
+|----------|----------|---------|-------------|
+| `GEMINI_API_KEY` | ✅ Yes | — | Google AI Studio API key |
+| `GEMINI_MODEL` | No | `gemini-2.5-flash` | Gemini model for hints & classification |
+| `EMBEDDING_MODEL` | No | `text-embedding-004` | Model for embeddings (only used by ingestion script) |
+| `DATABASE_URL` | No | — | Postgres URL (enables hint history persistence) |
+| `REDIS_URL` | No | `redis://localhost:6379` | Redis URL (enables response caching) |
+| `PORT` | No | `3001` | Server port |
 
 ## Architecture
 
-The backend provides the API and data services for the extension:
+```
+Chrome Extension (popup.js)
+    │
+    ├── GET  /api/health   → Health check
+    ├── POST /api/hint     → Stream/generate hints (SSE)
+    ├── POST /api/similar  → Find similar problems
+    └── GET  /api/history  → Hint history
+    │
+Backend (Node.js / Express / TypeScript)
+    │
+    ├── services/gemini.ts    → @google/genai SDK wrapper
+    ├── services/aiGuard.ts   → Retry/quota error handling
+    ├── services/cache.ts     → Redis caching (optional)
+    ├── services/classifier.ts → Topic classification
+    └── data/leetcode-problems.json → Curated problem dataset
+```
 
-- `POST /api/hint` — generates tiered hints and stores history.
-- `POST /api/similar` — finds similar problems using RAG or fallback LLM.
-- `GET /api/history` — returns hint history for a device.
-- `GET /api/health` — basic health check.
+## SDK
 
-The main server services are:
+This project uses the **official `@google/genai` SDK** (not the deprecated `@google/generative-ai` package).
 
-- `gemini.ts` — Gemini hint generation, streaming, and classification.
-- `embedding.ts` — embedding generation and pgvector similarity search.
-- `cache.ts` — Redis caching layer.
-- `classifier.ts` — topic classification and caching logic.
+## Project Structure
 
-## Notes
-
-- The Chrome extension does not call Gemini directly from the browser.
-- The backend manages API requests, LLM calls, classification, and RAG retrieval.
-- Use `GEMINI_MODEL` and `EMBEDDING_MODEL` in `.env` to override defaults.
-- `GEMINI_MODEL` default is `gemini-2.5-flash` and `EMBEDDING_MODEL` default is `text-embedding-3-large`.
-
-## Important
-
-The server README inside `server/` has been removed; this root README contains the full backend setup and architecture documentation for the project.
+```
+DSA_extension/
+├── manifest.json          # Chrome extension manifest v3
+├── popup.html/css/js      # Extension UI
+├── content.js             # Problem scraper (LeetCode, Codeforces)
+├── background.js          # Service worker
+└── server/
+    ├── src/
+    │   ├── app.ts         # Express setup
+    │   ├── index.ts       # Server entry point
+    │   ├── config.ts      # Environment config
+    │   ├── routes/        # API route handlers
+    │   ├── services/      # Gemini, caching, classification
+    │   └── middleware/     # Validation, rate limiting, errors
+    ├── data/              # Problem dataset
+    └── scripts/           # Ingestion script (optional)
+```

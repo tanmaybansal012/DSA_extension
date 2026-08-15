@@ -4,125 +4,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DSA Hint Assistant</title>
+  <title>Code Mentor AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* --- Styles from main branch (kept) --- */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-
-    :root,
-    html[data-theme="dark"] {
-      --bg: #0b0e14;
-      --grid-line: rgba(255, 255, 255, 0.035);
-      --surface: rgba(23, 28, 40, 0.72);
-      --surface-card: rgba(20, 24, 34, 0.92);
-      --surface-hover: rgba(31, 37, 52, 0.95);
-      --border: rgba(255, 255, 255, 0.08);
-      --border-strong: rgba(255, 255, 255, 0.18);
-
-      --accent: #f2a93b;
-      --accent-soft: rgba(242, 169, 59, 0.14);
-      --accent-ink: #241a08;
-      --accent2: #5ec8d8;
-      --accent2-soft: rgba(94, 200, 216, 0.14);
-      --green: #4fbf7a;
-      --red: #e2685f;
-      --orange: #d99a3d;
-
-      --text: #dfe3ea;
-      --text-strong: #f7f8fa;
-      --muted: #838da0;
-      --placeholder: #4c5468;
-
-      --code-text: #d3d9e6;
-
-      --btn-primary-bg: #f2a93b;
-      --btn-primary-text: #1a1305;
-      --btn-primary-hover: #ffbb55;
-
-      --shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
-      --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.35);
-      --radius: 14px;
-      --radius-sm: 9px;
-
-      color-scheme: dark;
-    }
-
-    html[data-theme="light"] {
-      --bg: #eef1f5;
-      --grid-line: rgba(20, 25, 40, 0.05);
-      --surface: rgba(255, 255, 255, 0.7);
-      --surface-card: rgba(255, 255, 255, 0.96);
-      --surface-hover: rgba(238, 241, 247, 0.98);
-      --border: rgba(18, 22, 38, 0.08);
-      --border-strong: rgba(18, 22, 38, 0.16);
-
-      --accent: #b9700f;
-      --accent-soft: rgba(185, 112, 15, 0.12);
-      --accent-ink: #fff4e0;
-      --accent2: #0e8fa0;
-      --accent2-soft: rgba(14, 143, 160, 0.12);
-      --green: #1a8f52;
-      --red: #c8483d;
-      --orange: #b17a19;
-
-      --text: #262b38;
-      --text-strong: #0e1119;
-      --muted: #676f81;
-      --placeholder: #a3a9ba;
-
-      --code-text: #2a2f3f;
-
-      --btn-primary-bg: #171a24;
-      --btn-primary-text: #f7f8fa;
-      --btn-primary-hover: #262b3a;
-
-      --shadow: 0 18px 44px rgba(30, 34, 55, 0.1);
-      --shadow-sm: 0 4px 14px rgba(30, 34, 55, 0.07);
-      --radius: 14px;
-      --radius-sm: 9px;
-
-      color-scheme: light;
-    }
-
-    /* --- Additional / alternative theme tokens and smaller adjustments from incoming branch --- */
-    /* Keep incoming branch glow tokens but names won't collide; they can enhance appearance when used */
-    :root {
-      --bg-glow-1: rgba(157, 142, 255, 0.0);
-      --bg-glow-2: rgba(74, 227, 255, 0.0);
-    }
-
-    /* body and many other rules from both sides are intentionally preserved in the full stylesheet below to avoid layout regressions.
-       For brevity in the conflict resolution block the full combined stylesheet is continued (both sets of rules are present in the final file).
-    */
-
-    /* Remaining combined styles inserted from both branches... (full styles exist in-file) */
-  </style>
+  <link rel="stylesheet" href="popup.css" />
+  <script src="marked.min.js"></script>
 </head>
 
 <body>
 
   <header>
-    <div class="logo"> 💡 </div>
+    <div class="logo">CMA</div>
     <div>
       <h1>Code Mentor AI</h1>
-      <p>AI-powered hints for competitive coding & DSA</p>
+      <p>DSA hints &amp; problem analysis</p>
     </div>
     <div class="header-controls">
-      <button class="theme-toggle" id="theme-toggle" title="Toggle light / dark mode" aria-label="Toggle light and dark mode">
-        <span class="knob" id="theme-knob">🌙</span>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+        <span class="knob" id="theme-knob">Dark</span>
       </button>
       <div class="status-dot" id="status-dot" title="Not on a supported page"></div>
     </div>
@@ -130,9 +32,9 @@
 
   <main>
     <div class="tabs">
-      <div class="tab active" data-tab="hints"><span>💡</span> Hints</div>
-      <div class="tab" data-tab="history"><span>📜</span> History</div>
-      <div class="tab" data-tab="settings"><span>⚙️</span> Settings</div>
+      <div class="tab active" data-tab="hints">Hints</div>
+      <div class="tab" data-tab="history">History</div>
+      <div class="tab" data-tab="settings">Settings</div>
     </div>
 
     <!-- HINTS TAB -->
@@ -140,48 +42,29 @@
 
       <div class="card" id="problem-card">
         <div id="problem-title">
-          Loading…
+          <span id="problem-title-text">Loading…</span>
           <span class="platform-badge" id="problem-platform">LC</span>
         </div>
         <div id="problem-desc"></div>
       </div>
 
       <div class="card" id="no-problem">
-        <div class="big">🔍</div>
+        <div class="big" style="font-size:24px; margin-bottom:8px;">[  ]</div>
         <strong>No problem detected</strong>
-        <span>Open a LeetCode or Codeforces problem, then click the extension.</span>
+        <span>Open a LeetCode or Codeforces problem page, then click the extension.</span>
       </div>
 
-      <div id="hint-controls" style="display:none">
-        <div class="section-label">Hint Level</div>
-        <div class="hint-levels">
-          <button class="level-btn active" data-level="1">
-            <span class="num">0</span>Nudge
-          </button>
-          <button class="level-btn" data-level="2">
-            <span class="num">1</span>Approach
-          </button>
-          <button class="level-btn" data-level="3">
-            <span class="num">2</span>Algo
-          </button>
-          <button class="level-btn" data-level="4">
-            <span class="num">3</span>Skeleton
-          </button>
-        </div>
-      </div>
-
-      <div id="code-section" style="display:none">
-        <div class="section-label">Your code (optional)</div>
-        <textarea id="user-code" placeholder="// Paste your code attempt here..."></textarea>
+      <!-- Hint level progress -->
+      <div id="level-badges" class="hint-level-badges" style="display:none">
+        <span class="level-badge active" data-level="1">L1 · Nudge</span>
+        <span class="level-badge" data-level="2">L2 · Approach</span>
+        <span class="level-badge" data-level="3">L3 · Solution</span>
       </div>
 
       <div id="action-btns" class="btn-row" style="display:none">
-        <button class="btn btn-primary" id="get-hint-btn">
-          <span>💡</span> Get Hint
-        </button>
-        <button class="btn btn-secondary" id="similar-btn">
-          <span>🔗</span> Similar
-        </button>
+        <button class="btn btn-primary" id="get-hint-btn">Get Hint</button>
+        <button class="btn btn-primary" id="next-hint-btn" style="display:none;">Next Hint</button>
+        <button class="btn btn-secondary" id="similar-btn">Similar</button>
       </div>
 
       <div class="loader" id="loader">
@@ -191,26 +74,33 @@
         <span id="loader-text">Thinking…</span>
       </div>
 
+      <!-- Error state component -->
+      <div class="error-state" id="error-box" style="display:none">
+        <div class="error-icon">!</div>
+        <div class="error-content">
+          <div class="error-title" id="error-title">Error</div>
+          <div class="error-message" id="error-message">Something went wrong.</div>
+        </div>
+      </div>
+
       <div class="card" id="output-box">
         <div class="output-header">
-          <span class="output-tag" id="output-tag">HINT • LEVEL 1</span>
-          <button id="copy-btn" title="Copy to clipboard">📋</button>
+          <span class="output-tag" id="output-tag">HINT · LEVEL 1</span>
+          <button id="copy-btn" title="Copy to clipboard">Copy</button>
         </div>
         <div id="output-text"></div>
       </div>
 
-    </div>
-
-    <div class="tab-panel" id="tab-settings">
-      <div class="settings-card">
-        <div class="section-label">Gemini API Key</div>
-        <div class="key-row">
-          <input type="password" id="api-key-input" placeholder="AIza…" autocomplete="off"/>
-          <button class="save-btn" id="save-key-btn">Save</button>
-        </div>
-        <div class="key-status" id="key-status">No key stored</div>
+      <!-- Similar problems empty state -->
+      <div class="empty-state" id="similar-empty" style="display:none">
+        Click "Similar" to find related problems for practice.
       </div>
 
+      <div class="request-counter" id="request-counter" style="display:none"></div>
+
+    </div>
+
+    <!-- HISTORY TAB -->
     <div class="tab-panel" id="tab-history">
       <div class="table-wrapper">
         <table class="history-table">
@@ -222,68 +112,52 @@
               <th>Hint</th>
             </tr>
           </thead>
-          <tbody id="history-container">
-            <!-- History items injected here -->
-          </tbody>
+          <tbody id="history-container"></tbody>
         </table>
       </div>
       <div id="history-empty">
-        <div style="font-size:24px; margin-bottom:8px;">📭</div>
-        No hint history found.<br>Get a hint to see it here!
+        <div style="font-size:22px; margin-bottom:6px;">--</div>
+        No hint history yet.<br>Get a hint to see it here!
       </div>
     </div>
 
     <!-- SETTINGS TAB -->
     <div class="tab-panel" id="tab-settings">
       <div class="card settings-card">
+        <div class="section-label">Gemini API Key</div>
+        <div class="key-row">
+          <input type="password" id="api-key-input" placeholder="AIza…" autocomplete="off" />
+          <button class="save-btn" id="save-key-btn">Save</button>
+        </div>
+        <div class="key-status" id="key-status">No key stored</div>
+      </div>
+
+      <div class="card settings-card">
         <div class="status-box">
           <div class="status-icon" id="server-status-icon">●</div>
           <div>
-            <div class="status-text">Backend Connected</div>
-            <div class="status-subtext" id="server-status-text">Routing via localhost:3001</div>
+            <div class="status-text">Backend Status</div>
+            <div class="status-subtext" id="server-status-text">Checking…</div>
           </div>
         </div>
+      </div>
 
+      <div class="card settings-card">
         <div class="section-label">About</div>
-        <div style="color:var(--muted); line-height:1.7; font-size:12px;">
-          Works on <span style="color:var(--accent2); font-weight:600;">leetcode.com/problems/*</span> and
-          <span style="color:var(--accent2); font-weight:600;">codeforces.com/problemset/*</span>.<br><br>
-          Powered by <strong style="color:var(--text)">Gemini 2.0 Flash</strong> &amp; <strong
+        <div style="color:var(--text-muted); line-height:1.6; font-size:11px;">
+          Works on <span style="color:var(--accent-text); font-weight:600;">leetcode.com/problems/*</span> and
+          <span style="color:var(--accent-text); font-weight:600;">codeforces.com/problemset/*</span>.<br><br>
+          Powered by <strong style="color:var(--text)">Gemini 2.5 Flash</strong> &amp; <strong
             style="color:var(--text)">pgvector</strong>.<br><br>
-          <span style="font-size: 11px;">Your anonymous Device ID:<br>
+          <span style="font-size: 10px;">Device ID:
             <code id="device-id-display"
-              style="background:var(--surface-card); padding:2px 6px; border-radius:4px; font-size:10px; margin-top:4px; display:inline-block;">...</code></span>
-          <div style="margin-top:8px; color:var(--muted); font-size:11px;">Your API key is stored safely on your local storage.</div>
-        </div>
+              style="background:var(--code-bg); padding:1px 4px; border-radius:3px; font-size:9px; font-family:'JetBrains Mono',monospace;">…</code></span>
         </div>
       </div>
     </div>
 
   </main>
 
-  <script>
-    // ─── Theme toggle (light / dark) ───
-    (function () {
-      const root = document.documentElement;
-      const toggleBtn = document.getElementById('theme-toggle');
-      const knob = document.getElementById('theme-knob');
-
-      function applyTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        knob.textContent = theme === 'light' ? '☀️' : '🌙';
-        try { localStorage.setItem('cma-theme', theme); } catch (e) {}
-      }
-
-      let saved = 'dark';
-      try { saved = localStorage.getItem('cma-theme') || 'dark'; } catch (e) {}
-      applyTheme(saved);
-
-      toggleBtn.addEventListener('click', () => {
-        const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-        applyTheme(current);
-      });
-    })();
-  </script>
   <script src="popup.js"></script>
 </body>
 
